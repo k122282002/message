@@ -1,4 +1,8 @@
 <!doctype html>
+<style>
+	alert("123");
+</style>
+<?php exit(); ?>
 <html>
   <head>
     <title>Kenny message<?php echo 123;?></title>
