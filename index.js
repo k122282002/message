@@ -7,7 +7,7 @@ var currentSockets = [];
 var typingUsers = [];
 
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.php');
+  res.sendFile(__dirname + '/index.html');
 });
 
 io.on('connection', function(socket){
