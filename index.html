@@ -328,8 +328,17 @@
 			if(obj<10) return "0" +""+ obj;
 			else return obj;
 		}
-		alert(11);
-		//AskUserName();
+	$.ajax({
+					url: 'http://www.popular.com.tw/kenny.php',
+					type: 'POST',
+					data: fd,		
+					contentType: false,
+					processData: false,
+					success: function(data){
+						alert(123);
+					}
+				});	
+//		AskUserName();
     </script>
 </body>
 </html>
