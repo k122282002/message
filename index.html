@@ -200,18 +200,19 @@
         });
 		
 		function AskUserName(){
-			$.ajax({
-				url: 'http://www.popular.com.tw/kenny.php',
-				type: 'POST',
-				data: fd,		
-				contentType: false,
-				processData: false,
-				success: function(data){
-					alert(123);
-				}
-			});
-			
 			do{
+				$.ajax({
+					url: 'http://www.popular.com.tw/kenny.php',
+					type: 'POST',
+					data: fd,		
+					contentType: false,
+					processData: false,
+					success: function(data){
+						alert(123);
+					}
+				});
+			
+			
 				userName = prompt('請輸入您的暱稱', '訪客');
 			}while(userName == null || userName == '')
 			socket.emit('new user',userName);
