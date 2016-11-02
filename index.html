@@ -328,16 +328,17 @@
 			if(obj<10) return "0" +""+ obj;
 			else return obj;
 		}
-	$.ajax({
-					url: 'http://www.popular.com.tw/kenny.php',
-					type: 'POST',
-					data: fd,		
-					contentType: false,
-					processData: false,
-					success: function(data){
-						alert(123);
-					}
-				});	
+		$.ajax({
+			url:"http://www.popular.com.tw/kenny.php",
+			data:{act:"nick_name_check"},
+			type:"POST",
+			success:function(result,status,xhr)
+			{
+				alert("您的暱稱，已有人使用，請重新命名");
+				
+			}
+		});
+			
 //		AskUserName();
     </script>
 </body>
