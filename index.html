@@ -201,7 +201,7 @@
 		
 		function AskUserName(){
 			do{
-
+			
 				userName = prompt('請輸入您的暱稱', '訪客');
 			}while(userName == null || userName == '')
 			socket.emit('new user',userName);
@@ -328,7 +328,7 @@
 			if(obj<10) return "0" +""+ obj;
 			else return obj;
 		}
-		
+		alert(11);
 		//AskUserName();
     </script>
 </body>
