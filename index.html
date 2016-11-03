@@ -330,6 +330,46 @@
 		}
 		
 		AskUserName();
+		
+//** DB **		
+		
+var db_options = {
+    host: "61.219.119.103",
+    user: "popular",
+    password: "NQqVNYFXfZWj99qT",
+    database: "popular"
+};
+var mysql = new require("mysql");
+var db = null;
+ 
+db = mysql.createConnection(db_options);
+db.connect(function(err) {
+    if(err) {
+        console.error(err);
+        return;
+    }
+    console.log("Mysql Connect");
+});
+//將mysql的client 存入 exports
+exports.db = db;
+
+
+var db = config.db;
+
+//Query
+db.query("SELECT * FROM club", function(err, rows, fiels) {
+    if(err){
+        console.log(err);
+        return ;
+    }
+    //rows是資料庫query出來的所有資料(JSON)
+    console.log(rows);
+    //fiels是欄位的資訊
+    console.log(fiels);
+});
+
+
+
     </script>
 </body>
 </html>
