@@ -1,7 +1,7 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var mysql = require('mysql');
+
 
 //pair of user's name and user's socket
 var currentUsers = [];
