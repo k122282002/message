@@ -1,52 +1,12 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var mysql = require('mysql');
+
 //pair of user's name and user's socket
 var currentUsers = [];
 var currentSockets = [];
 var typingUsers = [];
-
-//** DB **		
-		
-var db_options = {
-    host: "61.219.119.103",
-    user: "popular",
-    password: "NQqVNYFXfZWj99qT",
-    database: "popular"
-};
-var mysql = new require("mysql");
-var db = null;
- 
-db = mysql.createConnection(db_options);
-db.connect(function(err) {
-    if(err) {
-        console.error(err);
-        return;
-    }
-	alert(87);
-    console.log("Mysql Connect");
-});
-//將mysql的client 存入 exports
-exports.db = db;
-	
-
-var db = config.db;
-
-//Query
-db.query("SELECT * FROM club", function(err, rows, fiels) {
-    if(err){
-        console.log(err);
-        return ;
-    }
-	alert(98);
-    //rows是資料庫query出來的所有資料(JSON)
-    console.log(rows);
-    //fiels是欄位的資訊
-    console.log(fiels);
-});
-
-
-console.info("这是info");
 
 
 app.get('/', function(req, res){
