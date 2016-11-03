@@ -1,13 +1,10 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-
-
 //pair of user's name and user's socket
 var currentUsers = [];
 var currentSockets = [];
 var typingUsers = [];
-
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
